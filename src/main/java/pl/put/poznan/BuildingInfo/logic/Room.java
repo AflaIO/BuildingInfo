@@ -28,5 +28,9 @@ public class Room extends Location {
     public void display() {
         System.out.println("Room: " + name + ", Area: " + area + "m^2, Cube: " + cube + "m^3, Heating: " + heating + ", Light: " + light);
     }
+
+    public double getArea() {
+        return area;
+    }
 }
 
