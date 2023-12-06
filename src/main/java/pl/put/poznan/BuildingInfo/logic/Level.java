@@ -39,4 +39,12 @@ public class Level extends Location {
         }
         return totalArea;
     }
+
+    public double calculateTotalCube(){
+        double totalCube = 0.0;
+        for(Room:room:rooms){
+            totalCube += room.getCube();
+        }
+        return totalCube;
+    }
 }

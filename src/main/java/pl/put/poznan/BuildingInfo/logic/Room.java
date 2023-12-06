@@ -32,5 +32,7 @@ public class Room extends Location {
     public double getArea() {
         return area;
     }
+
+    public double getCube(){return cube;}
 }
 

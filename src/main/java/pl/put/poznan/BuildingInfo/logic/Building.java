@@ -40,4 +40,12 @@ public class Building extends Location {
         }
         return totalArea;
     }
+
+    public double calculateTotalCube(){
+        double totalCube = 0.0;
+        for(Level level: levels) {
+            totalCube += level.calculateTotalCube();
+        }
+        return totalCube;
+    }
 }
