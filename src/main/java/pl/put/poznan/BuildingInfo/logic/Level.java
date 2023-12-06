@@ -40,6 +40,13 @@ public class Level extends Location {
         }
         return totalArea;
     }
+    public double calculateTotalCube(){
+        double totalCube = 0.0;
+        for(Room room : rooms){
+            totalCube += room.getCube();
+        }
+        return totalCube;
+    }
 
     public double calculateLightPower() {
         double lightPower = 0.0;
@@ -47,6 +54,14 @@ public class Level extends Location {
             lightPower += room.calculateLightPower();
         }
         return lightPower;
+    }
+
+    public double calculateTotalEnergyConsumption() {
+        double totalEnergyConsumption = 0.0;
+        for (Room room : rooms) {
+            totalEnergyConsumption += room.calculateEnergyConsumption();
+        }
+        return totalEnergyConsumption;
     }
 
     public int getId() {
