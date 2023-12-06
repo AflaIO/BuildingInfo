@@ -1,12 +1,24 @@
 package pl.put.poznan.BuildingInfo.logic;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Room extends Location {
     private double area;
     private double cube;
-    private float heating;
+    private double heating;
     private int light;
 
-    public Room(int id, String name, double area, double cube, float heating, int light) {
+    @JsonCreator
+    public Room(@JsonProperty("id") int id,
+                @JsonProperty("name") String name,
+                @JsonProperty("area") double area,
+                @JsonProperty("cube") double cube,
+                @JsonProperty("heating") double heating,
+                @JsonProperty("light") int light
+                ) {
         super(id, name);
         this.area = area;
         this.cube = cube;
@@ -32,5 +44,7 @@ public class Room extends Location {
     public double getArea() {
         return area;
     }
+
+    public double getEnergyConsumption() { return heating/cube; }
 }
 

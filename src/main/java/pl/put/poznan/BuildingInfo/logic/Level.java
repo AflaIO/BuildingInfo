@@ -1,13 +1,19 @@
 package pl.put.poznan.BuildingInfo.logic;
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Level extends Location {
     private List<Room> rooms;
 
-    public Level(int id, String name) {
+    @JsonCreator
+    public Level(
+            @JsonProperty("id") int id,
+            @JsonProperty("name") String name,
+            @JsonProperty("rooms") List<Room> rooms) {
         super(id, name);
-        this.rooms = new ArrayList<>();
+        this.rooms = rooms;
     }
 
     @Override
@@ -32,11 +38,22 @@ public class Level extends Location {
         }
     }
 
+    public List<Room> getRooms(){ return rooms;}
+
     public double calculateTotalArea() {
         double totalArea = 0.0;
         for (Room room : rooms) {
             totalArea += room.getArea();
         }
         return totalArea;
+    }
+
+    public double calculateTotalEnergyConsumption() {
+        double totalEnergyConsumption = 0.0;
+        for (Room room : rooms) {
+            totalEnergyConsumption += room.getEnergyConsumption();
+        }
+        totalEnergyConsumption /= rooms.size();
+        return totalEnergyConsumption;
     }
 }
