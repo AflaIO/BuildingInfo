@@ -1,45 +1,86 @@
-// DO ZMIANY ALE NARAZIE POGLĄDOWO ZOSTAWIAM
+package pl.put.poznan.BuildingInfo.rest;
 
-//package pl.put.poznan.BuildingInfo.rest;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.web.bind.annotation.*;
-//import pl.put.poznan.BuildingInfo.logic.TextTransformer;
-//
-//import java.util.Arrays;
-//
-//
-//@RestController
-//@RequestMapping("/{text}")
-//public class BuildingInfoController {
-//
-//    private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
-//
-//    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-//    public String get(@PathVariable String text,
-//                              @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
-//
-//        // log the parameters
-//        logger.debug(text);
-//        logger.debug(Arrays.toString(transforms));
-//
-//        // perform the transformation, you should run your logic here, below is just a silly example
-//        TextTransformer transformer = new TextTransformer(transforms);
-//        return transformer.transform(text);
-//    }
-//
-//    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-//    public String post(@PathVariable String text,
-//                      @RequestBody String[] transforms) {
-//
-//        // log the parameters
-//        logger.debug(text);
-//        logger.debug(Arrays.toString(transforms));
-//
-//        // perform the transformation, you should run your logic here, below is just a silly example
-//        TextTransformer transformer = new TextTransformer(transforms);
-//        return transformer.transform(text);
-//    }
-//
-//}
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.web.bind.annotation.*;
+import pl.put.poznan.BuildingInfo.logic.Building;
+import pl.put.poznan.BuildingInfo.logic.JsonToBuilding;
+import java.io.File;
 
+@RestController
+@RequestMapping("/building")
+public class BuildingInfoController {
+    private Building building;
+    private final JsonToBuilding jsonToBuilding = new JsonToBuilding();
+
+    @PostMapping("/transform")
+    public void transformJsonToBuilding() {
+        try {
+            Resource resource = new ClassPathResource("building_structure.json");
+            File file = resource.getFile();
+            building = jsonToBuilding.transformJsonToBuilding(file.getPath());
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Failed to transform JSON to Building object: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/area")
+    public double calculateBuildingArea() {
+
+        if (building == null) {
+            throw new IllegalStateException("Building object is not initialized. Transform JSON first.");
+        }
+
+        return building.calculateTotalArea();
+    }
+
+    @GetMapping("/consumption")
+    public double calculateBuildingEnergyConsumption() {
+
+        if (building == null) {
+            throw new IllegalStateException("Building object is not initialized. Transform JSON first.");
+        }
+
+        return building.calculateTotalEnergyConsumption();
+    }
+
+    @GetMapping("/level/{levelId}/area")
+    public double calculateLevelArea(@PathVariable int levelId) {
+
+        if (building == null) {
+            throw new IllegalStateException("Building object is not initialized. Transform JSON first.");
+        }
+
+        return building.getLevelById(levelId).calculateTotalArea();
+    }
+
+    @GetMapping("/level/{levelId}/consumption")
+    public double calculateLevelEnergyConsumption(@PathVariable int levelId) {
+
+        if (building == null) {
+            throw new IllegalStateException("Building object is not initialized. Transform JSON first.");
+        }
+
+        return building.getLevelById(levelId).calculateTotalEnergyConsumption();
+    }
+    @GetMapping("/room/{roomId}/area")
+    public double calculateRoomArea(@PathVariable int roomId) {
+
+        if (building == null) {
+            throw new IllegalStateException("Building object is not initialized. Transform JSON first.");
+        }
+
+        return building.getRoomById(roomId).getArea();
+    }
+
+    @GetMapping("/room/{roomId}/consumption")
+    public double calculateRoomEnergyConsumption(@PathVariable int roomId) {
+
+        if (building == null) {
+            throw new IllegalStateException("Building object is not initialized. Transform JSON first.");
+        }
+
+        return building.getRoomById(roomId).getEnergyConsumption();
+    }
+
+}
