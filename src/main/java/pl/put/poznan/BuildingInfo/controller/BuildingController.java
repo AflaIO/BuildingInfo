@@ -19,14 +19,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/buildings")
 public class BuildingController {
-    @GetMapping("/area/{buildingId}")
-    public ResponseEntity<?> getArea(@PathVariable int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
-        BuildingDTO foundBuilding = findBuildingById(buildingDTOs, buildingId);
+    @GetMapping("/area")
+    public ResponseEntity<?> getArea(@RequestParam int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        BuildingDTO buildingDTO = findBuildingById(buildingDTOs, buildingId);
 
-        if (foundBuilding != null) {
-            Building building = new Building(buildingId, foundBuilding.getName());
+        if (buildingDTO != null) {
+            Building building = new Building(buildingId, buildingDTO.getName());
 
-            foundBuilding.getLevels().forEach(levelDTO -> {
+            buildingDTO.getLevels().forEach(levelDTO -> {
                 Level level = new Level(levelDTO.getId(), levelDTO.getName());
                 levelDTO.getRooms().forEach(roomDTO ->
                         level.add(new Room(
@@ -51,14 +51,14 @@ public class BuildingController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Building with ID: "+buildingId+" not found");
         }
     }
-    @GetMapping("/cube/{buildingId}")
-    public ResponseEntity<?> getCube(@PathVariable int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
-        BuildingDTO foundBuilding = findBuildingById(buildingDTOs, buildingId);
+    @GetMapping("/cube")
+    public ResponseEntity<?> getCube(@RequestParam int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        BuildingDTO buildingDTO = findBuildingById(buildingDTOs, buildingId);
 
-        if (foundBuilding != null) {
-            Building building = new Building(buildingId, foundBuilding.getName());
+        if (buildingDTO != null) {
+            Building building = new Building(buildingId, buildingDTO.getName());
 
-            foundBuilding.getLevels().forEach(levelDTO -> {
+            buildingDTO.getLevels().forEach(levelDTO -> {
                 Level level = new Level(levelDTO.getId(), levelDTO.getName());
                 levelDTO.getRooms().forEach(roomDTO ->
                         level.add(new Room(
@@ -84,14 +84,14 @@ public class BuildingController {
         }
     }
 
-    @GetMapping("/light-power/{buildingId}")
-    public ResponseEntity<?> getAveragePower(@PathVariable int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
-        BuildingDTO foundBuilding = findBuildingById(buildingDTOs, buildingId);
+    @GetMapping("/light-power")
+    public ResponseEntity<?> getAveragePower(@RequestParam int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        BuildingDTO buildingDTO = findBuildingById(buildingDTOs, buildingId);
 
-        if (foundBuilding != null) {
-            Building building = new Building(buildingId, foundBuilding.getName());
+        if (buildingDTO != null) {
+            Building building = new Building(buildingId, buildingDTO.getName());
 
-            foundBuilding.getLevels().forEach(levelDTO -> {
+            buildingDTO.getLevels().forEach(levelDTO -> {
                 Level level = new Level(levelDTO.getId(), levelDTO.getName());
                 levelDTO.getRooms().forEach(roomDTO ->
                         level.add(new Room(
@@ -117,14 +117,14 @@ public class BuildingController {
         }
     }
 
-    @GetMapping("/energy-consumption/{buildingId}")
-    public ResponseEntity<?> getEnergyConsumption(@PathVariable int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
-        BuildingDTO foundBuilding = findBuildingById(buildingDTOs, buildingId);
+    @GetMapping("/energy-consumption")
+    public ResponseEntity<?> getEnergyConsumption(@RequestParam int buildingId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        BuildingDTO buildingDTO = findBuildingById(buildingDTOs, buildingId);
 
-        if (foundBuilding != null) {
-            Building building = new Building(buildingId, foundBuilding.getName());
+        if (buildingDTO != null) {
+            Building building = new Building(buildingId, buildingDTO.getName());
 
-            foundBuilding.getLevels().forEach(levelDTO -> {
+            buildingDTO.getLevels().forEach(levelDTO -> {
                 Level level = new Level(levelDTO.getId(), levelDTO.getName());
                 levelDTO.getRooms().forEach(roomDTO ->
                         level.add(new Room(

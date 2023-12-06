@@ -18,8 +18,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/levels")
 public class LevelController {
-    @GetMapping("/area/{levelId}")
-    public ResponseEntity<?> getArea(@PathVariable int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/area")
+    public ResponseEntity<?> getArea(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {
@@ -46,8 +46,8 @@ public class LevelController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Level with ID: "+levelId+" not found");
         }
     }
-    @GetMapping("/cube/{levelId}")
-    public ResponseEntity<?> getCube(@PathVariable int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/cube")
+    public ResponseEntity<?> getCube(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {
@@ -74,8 +74,8 @@ public class LevelController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Level with ID: "+levelId+" not found");
         }
     }
-    @GetMapping("/light-power/{levelId}")
-    public ResponseEntity<?> getAveragePower(@PathVariable int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/light-power")
+    public ResponseEntity<?> getAveragePower(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {
@@ -103,8 +103,8 @@ public class LevelController {
         }
     }
 
-    @GetMapping("/energy-consumption/{levelId}")
-    public ResponseEntity<?> getEnergyConsumption(@PathVariable int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/energy-consumption")
+    public ResponseEntity<?> getEnergyConsumption(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {

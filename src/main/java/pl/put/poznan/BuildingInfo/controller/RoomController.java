@@ -17,8 +17,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/rooms")
 public class RoomController {
-    @GetMapping("/area/{roomId}")
-    public ResponseEntity<?> getArea(@PathVariable int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/area")
+    public ResponseEntity<?> getArea(@RequestParam int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
         RoomDTO roomDTO = findRoomById(buildingDTOs, roomId);
 
         if (roomDTO != null) {
@@ -41,8 +41,8 @@ public class RoomController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Room with ID: "+roomId+" not found");
         }
     }
-    @GetMapping("/cube/{roomId}")
-    public ResponseEntity<?> getCube(@PathVariable int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/cube")
+    public ResponseEntity<?> getCube(@RequestParam int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
         RoomDTO roomDTO = findRoomById(buildingDTOs, roomId);
 
         if (roomDTO != null) {
@@ -65,8 +65,8 @@ public class RoomController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Room with ID: "+roomId+" not found");
         }
     }
-    @GetMapping("/light-power/{roomId}")
-    public ResponseEntity<?> getAveragePower(@PathVariable int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/light-power")
+    public ResponseEntity<?> getAveragePower(@RequestParam int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
         RoomDTO roomDTO = findRoomById(buildingDTOs, roomId);
 
         if (roomDTO != null) {
@@ -90,8 +90,8 @@ public class RoomController {
         }
     }
 
-    @GetMapping("/energy-consumption/{roomId}")
-    public ResponseEntity<?> getEnergyConsumption(@PathVariable int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
+    @GetMapping("/energy-consumption")
+    public ResponseEntity<?> getEnergyConsumption(@RequestParam int roomId, @RequestBody List<BuildingDTO> buildingDTOs) {
         RoomDTO roomDTO = findRoomById(buildingDTOs, roomId);
 
         if (roomDTO != null) {
