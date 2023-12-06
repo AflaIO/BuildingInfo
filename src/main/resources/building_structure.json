@@ -1,57 +1,116 @@
-{
-  "locationType": "building",
-  "id": 1,
-  "name": "Main Building",
-  "levels": [
-    {
-      "locationType": "level",
-      "id": 101,
-      "name": "Ground Floor",
-      "rooms": [
-        {
-          "locationType": "room",
-          "id": 1001,
-          "name": "Conference Room",
-          "area": 50,
-          "cube": 150,
-          "heating": 120.5,
-          "light": 800
-        },
-        {
-          "locationType": "room",
-          "id": 1002,
-          "name": "Office Room",
-          "area": 30,
-          "cube": 90,
-          "heating": 80.2,
-          "light": 500
-        }
-      ]
-    },
-    {
-      "locationType": "level",
-      "id": 102,
-      "name": "First Floor",
-      "rooms": [
-        {
-          "locationType": "room",
-          "id": 1003,
-          "name": "Meeting Room",
-          "area": 40,
-          "cube": 120,
-          "heating": 100.8,
-          "light": 600
-        },
-        {
-          "locationType": "room",
-          "id": 1004,
-          "name": "Working Space",
-          "area": 60,
-          "cube": 180,
-          "heating": 150.0,
-          "light": 900
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "locationType": "building",
+    "id": 1,
+    "name": "Main Building",
+    "levels": [
+      {
+        "locationType": "level",
+        "id": 101,
+        "name": "Ground Floor",
+        "rooms": [
+          {
+            "locationType": "room",
+            "id": 1001,
+            "name": "Conference Room",
+            "area": 50,
+            "cube": 150,
+            "heating": 120.5,
+            "light": 800
+          },
+          {
+            "locationType": "room",
+            "id": 1002,
+            "name": "Office Room",
+            "area": 30,
+            "cube": 90,
+            "heating": 80.2,
+            "light": 500
+          }
+        ]
+      },
+      {
+        "locationType": "level",
+        "id": 102,
+        "name": "First Floor",
+        "rooms": [
+          {
+            "locationType": "room",
+            "id": 1003,
+            "name": "Meeting Room",
+            "area": 40,
+            "cube": 120,
+            "heating": 100.8,
+            "light": 600
+          },
+          {
+            "locationType": "room",
+            "id": 1004,
+            "name": "Working Space",
+            "area": 60,
+            "cube": 180,
+            "heating": 150.0,
+            "light": 900
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "locationType": "building",
+    "id": 2,
+    "name": "Second Building",
+    "levels": [
+      {
+        "locationType": "level",
+        "id": 201,
+        "name": "Ground Floor",
+        "rooms": [
+          {
+            "locationType": "room",
+            "id": 2001,
+            "name": "Lobby",
+            "area": 80,
+            "cube": 200,
+            "heating": 150.5,
+            "light": 1000
+          },
+          {
+            "locationType": "room",
+            "id": 2002,
+            "name": "Break Room",
+            "area": 30,
+            "cube": 80,
+            "heating": 50.2,
+            "light": 300
+          }
+        ]
+      },
+      {
+        "locationType": "level",
+        "id": 202,
+        "name": "Second Floor",
+        "rooms": [
+          {
+            "locationType": "room",
+            "id": 2003,
+            "name": "Conference Room",
+            "area": 50,
+            "cube": 150,
+            "heating": 120.8,
+            "light": 800
+          },
+          {
+            "locationType": "room",
+            "id": 2004,
+            "name": "Office Space",
+            "area": 70,
+            "cube": 180,
+            "heating": 130.0,
+            "light": 700
+          }
+        ]
+      }
+    ]
+  }
+]

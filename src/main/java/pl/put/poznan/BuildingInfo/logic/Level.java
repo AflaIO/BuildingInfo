@@ -10,6 +10,7 @@ public class Level extends Location {
         this.rooms = new ArrayList<>();
     }
 
+
     @Override
     public void add(Location location) {
         if (location instanceof Room) {
@@ -38,5 +39,35 @@ public class Level extends Location {
             totalArea += room.getArea();
         }
         return totalArea;
+    }
+    public double calculateTotalCube(){
+        double totalCube = 0.0;
+        for(Room room : rooms){
+            totalCube += room.getCube();
+        }
+        return totalCube;
+    }
+
+    public double calculateLightPower() {
+        double lightPower = 0.0;
+        for (Room room : rooms) {
+            lightPower += room.calculateLightPower();
+        }
+        return lightPower;
+    }
+
+    public double calculateTotalEnergyConsumption() {
+        double totalEnergyConsumption = 0.0;
+        for (Room room : rooms) {
+            totalEnergyConsumption += room.calculateEnergyConsumption();
+        }
+        return totalEnergyConsumption;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+    public String getName() {
+        return this.name;
     }
 }

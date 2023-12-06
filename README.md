@@ -13,3 +13,7 @@
    * cube = kubatura pomieszczenia w m^3
    * heating = poziom zużycia energii ogrzewania (float)
    * light – łączna moc oświetlenia
+
+## Wersjonowanie
+Przy kazdym mergu do maina tworzymy nowy tag i podnosimy wersję zarówno pomie jak i w tworzonym release
+

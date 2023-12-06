@@ -40,4 +40,36 @@ public class Building extends Location {
         }
         return totalArea;
     }
+
+    public double calculateTotalCube(){
+        double totalCube = 0.0;
+        for(Level level: levels) {
+            totalCube += level.calculateTotalCube();
+        }
+        return totalCube;
+    }
+
+    public double calculateLightPower() {
+        double lightPower = 0.0;
+        for (Level level : levels) {
+            lightPower += level.calculateLightPower();
+        }
+        return lightPower;
+    }
+
+    public double calculateTotalEnergyConsumption() {
+        double totalEnergyConsumption = 0.0;
+        for (Level level : levels) {
+            totalEnergyConsumption += level.calculateTotalEnergyConsumption();
+        }
+        return totalEnergyConsumption;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 }
