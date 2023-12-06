@@ -40,4 +40,20 @@ public class Building extends Location {
         }
         return totalArea;
     }
+
+    public double calculateLightPower() {
+        double lightPower = 0.0;
+        for (Level level : levels) {
+            lightPower += level.calculateLightPower();
+        }
+        return lightPower;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 }
