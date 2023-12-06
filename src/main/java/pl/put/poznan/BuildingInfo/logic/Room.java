@@ -29,8 +29,23 @@ public class Room extends Location {
         System.out.println("Room: " + name + ", Area: " + area + "m^2, Cube: " + cube + "m^3, Heating: " + heating + ", Light: " + light);
     }
 
+    public double calculateLightPower() {
+        return (double) this.light / this.cube;
+    }
+
+    public double calculateEnergyConsumption() { return (double) this.heating/this.cube; }
+
     public double getArea() {
         return area;
+    }
+
+    public double getCube(){ return cube; }
+
+    public String getName() {
+        return this.name;
+    }
+    public int getId() {
+        return this.id;
     }
 }
 
