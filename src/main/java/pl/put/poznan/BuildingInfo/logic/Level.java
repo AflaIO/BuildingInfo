@@ -86,15 +86,14 @@ public class Level extends Location {
      *
      * @return The total volume (cube) of all rooms on the level.
      */
-
     public double calculateTotalCube() {
         double totalCube = 0.0;
-        for (Level level : levels) {
-            totalCube += level.calculateTotalCube();
-
+        for (Room room : rooms) {
+            totalCube += room.getCube();
         }
         return totalCube;
     }
+
 
     /**
      * Calculates the total light power of all rooms on the level.
