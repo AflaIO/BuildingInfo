@@ -33,6 +33,10 @@ public class Room extends Location {
         return (double) this.light / this.cube;
     }
 
+    public double calculateEnergyConsumption() {
+        return (double) this.heating / this.cube;
+    }
+
     public double getArea() {
         return area;
     }

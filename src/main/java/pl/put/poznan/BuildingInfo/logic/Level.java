@@ -49,6 +49,14 @@ public class Level extends Location {
         return lightPower;
     }
 
+    public double calculateTotalEnergyConsumption() {
+        double totalEnergyConsumption = 0.0;
+        for (Room room : rooms) {
+            totalEnergyConsumption += room.calculateEnergyConsumption();
+        }
+        return totalEnergyConsumption;
+    }
+
     public int getId() {
         return this.id;
     }
