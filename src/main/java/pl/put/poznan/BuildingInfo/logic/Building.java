@@ -89,6 +89,7 @@ public class Building extends Location {
         double totalCube = 0.0;
         for (Level level : levels) {
             totalCube += level.calculateTotalCube();
+
         }
         return totalCube;
     }
