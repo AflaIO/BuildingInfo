@@ -1,0 +1,5 @@
+pl.put.poznan.BuildingInfo.app
+pl.put.poznan.BuildingInfo.controller
+pl.put.poznan.BuildingInfo.DTO.requestBody
+pl.put.poznan.BuildingInfo.DTO.response
+pl.put.poznan.BuildingInfo.logic

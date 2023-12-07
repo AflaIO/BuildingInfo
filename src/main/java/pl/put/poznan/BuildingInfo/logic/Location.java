@@ -6,7 +6,7 @@ package pl.put.poznan.BuildingInfo.logic;
  * This class provides a common interface for specific locations within a building.
  * Subclasses should implement the methods to manage and display specific types of locations.
  *
- * @author Paulina Guzior, Jakub Binkowski, Benedykt Huszcza, Jan Wybieralski
+ * @author Paulina Guzior
  * @version 1.0
  */
 public abstract class Location {

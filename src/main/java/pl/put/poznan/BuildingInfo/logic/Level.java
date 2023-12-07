@@ -1,3 +1,8 @@
+package pl.put.poznan.BuildingInfo.logic;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Represents a level in a building, containing rooms.
  *

@@ -1,10 +1,14 @@
+package pl.put.poznan.BuildingInfo.logic;
+
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Represents a building, consisting of multiple levels.
  *
  * This class extends the abstract class Location and provides specific functionality
  * for managing levels within a building.
  *
- * @author Your Name
+ * @author Paulina Guzior, Jakub Binkowski, Benedykt Huszcza, Jan Wybieralski
  * @version 1.0
  */
 public class Building extends Location {
