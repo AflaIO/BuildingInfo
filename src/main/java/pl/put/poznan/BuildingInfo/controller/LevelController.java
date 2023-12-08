@@ -1,5 +1,7 @@
 package pl.put.poznan.BuildingInfo.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +20,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/levels")
 public class LevelController {
+    private static final Logger logger = LoggerFactory.getLogger(LevelController.class);
     @GetMapping("/area")
     public ResponseEntity<?> getArea(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        logger.info("Request received for method '{}' with levelId: {}", "getArea", levelId);
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {
+            logger.info("Level with ID: {} found", levelId);
             Level level = new Level(levelId, levelDTO.getName());
 
             levelDTO.getRooms().forEach(roomDTO ->
@@ -43,14 +48,17 @@ public class LevelController {
                             level.calculateTotalArea()
                     ));
         } else {
+            logger.warn("Level with ID: {} not found", levelId);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Level with ID: "+levelId+" not found");
         }
     }
     @GetMapping("/cube")
     public ResponseEntity<?> getCube(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        logger.info("Request received for method '{}' with levelId: {}", "getCube", levelId);
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {
+            logger.info("Level with ID: {} found", levelId);
             Level level = new Level(levelId, levelDTO.getName());
 
             levelDTO.getRooms().forEach(roomDTO ->
@@ -71,14 +79,17 @@ public class LevelController {
                             level.calculateTotalCube()
                     ));
         } else {
+            logger.warn("Level with ID: {} not found", levelId);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Level with ID: "+levelId+" not found");
         }
     }
     @GetMapping("/light-power")
     public ResponseEntity<?> getAveragePower(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        logger.info("Request received for method '{}' with levelId: {}", "getAveragePower", levelId);
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {
+            logger.info("Level with ID: {} found", levelId);
             Level level = new Level(levelId, levelDTO.getName());
 
             levelDTO.getRooms().forEach(roomDTO ->
@@ -99,15 +110,18 @@ public class LevelController {
                             level.calculateLightPower()
                     ));
         } else {
+            logger.warn("Level with ID: {} not found", levelId);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Level with ID: "+levelId+" not found");
         }
     }
 
     @GetMapping("/energy-consumption")
     public ResponseEntity<?> getEnergyConsumption(@RequestParam int levelId, @RequestBody List<BuildingDTO> buildingDTOs) {
+        logger.info("Request received for method '{}' with levelId: {}", "getEnergyConsumption", levelId);
         LevelDTO levelDTO = findLevelById(buildingDTOs, levelId);
 
         if (levelDTO != null) {
+            logger.info("Level with ID: {} found", levelId);
             Level level = new Level(levelId, levelDTO.getName());
 
             levelDTO.getRooms().forEach(roomDTO ->
@@ -128,6 +142,7 @@ public class LevelController {
                             level.calculateTotalEnergyConsumption()
                     ));
         } else {
+            logger.warn("Level with ID: {} not found", levelId);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Level with ID: "+levelId+" not found");
         }
     }
