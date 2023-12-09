@@ -9,7 +9,7 @@ import java.util.List;
  * This class extends the abstract class Location and provides specific functionality
  * for managing properties and calculations related to a room.
  *
- * @author Paulina Guzior, Jakub Binkowski, Benedykt Huszcza, Jan Wybieralski 
+ * @author Paulina Guzior, Jakub Binkowski, Benedykt Huszcza, Jan Wybieralski
  * @version 1.0
  */
 public class Room extends Location {
