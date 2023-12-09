@@ -16,3 +16,9 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: BuildingInfo
+          path: target/BuildingInfo-0.1.0.jar

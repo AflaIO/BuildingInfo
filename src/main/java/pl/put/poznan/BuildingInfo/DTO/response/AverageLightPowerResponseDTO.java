@@ -7,10 +7,10 @@ public class AverageLightPowerResponseDTO {
     private String name;
     private double averageLightPower;
 
-    public AverageLightPowerResponseDTO(int id, String name, double averageLightPower) {
+    public AverageLightPowerResponseDTO(int id, String name, double averageLightPowerForRoom) {
         this.id = id;
         this.name = name;
-        this.averageLightPower = averageLightPower;
+        this.averageLightPower = averageLightPowerForRoom;
     }
 
     public int getId() {
@@ -21,7 +21,7 @@ public class AverageLightPowerResponseDTO {
         return name;
     }
 
-    public double getAverageLightPower() {
+    public double getAverageLightPowerForRoom() {
         return averageLightPower;
     }
 }
