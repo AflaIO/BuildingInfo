@@ -105,6 +105,18 @@ public class Room extends Location {
      *
      * @return The area of the room in square meters.
      */
+    public double calculateEnergyCostYearly(double energyCost) { return this.calculateEnergyConsumption() * energyCost * 12; }
+
+    public double calculateEnergyCostMonthly(double energyCost) { return this.calculateEnergyConsumption() * energyCost; }
+
+    public double calculateEnergyCostWeekly(double energyCost) { return this.calculateEnergyConsumption() * energyCost / 4; }
+
+    public double calculateEnergyCostDaily(double energyCost) { return this.calculateEnergyConsumption() * energyCost / 31; }
+
+    public double calculateRentProfitYearly(double areaCost) { return this.getArea() * areaCost * 12; }
+    public double calculateRentProfitMonthly(double areaCost) { return this.getArea() * areaCost; }
+    public double calculateRentProfitWeekly(double areaCost) { return this.getArea() * areaCost / 4; }
+    public double calculateRentProfitDaily(double areaCost) { return this.getArea() * areaCost / 31; }
     public double getArea() {
         return area;
     }
