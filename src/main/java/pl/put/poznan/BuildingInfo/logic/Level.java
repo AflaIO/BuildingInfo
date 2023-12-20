@@ -121,6 +121,20 @@ public class Level extends Location {
         return totalEnergyConsumption;
     }
 
+    public double calculateEnergyCostYearly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost * 12; }
+
+    public double calculateEnergyCostMonthly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost; }
+
+    public double calculateEnergyCostWeekly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost / 4; }
+
+    public double calculateEnergyCostDaily(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost / 31; }
+
+    public double calculateRentProfitYearly(double areaCost) { return this.calculateTotalArea() * areaCost * 12; }
+
+    public double calculateRentProfitMonthly(double areaCost) { return this.calculateTotalArea() * areaCost; }
+    public double calculateRentProfitWeekly(double areaCost) { return this.calculateTotalArea() * areaCost / 4; }
+    public double calculateRentProfitDaily(double areaCost) { return this.calculateTotalArea() * areaCost / 31; }
+
     /**
      * Gets the unique identifier of the level.
      *
