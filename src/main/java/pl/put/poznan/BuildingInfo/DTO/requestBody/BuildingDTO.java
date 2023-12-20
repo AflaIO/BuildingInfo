@@ -19,4 +19,10 @@ public class BuildingDTO {
     public List<LevelDTO> getLevels() {
         return levels;
     }
+
+    public BuildingDTO(int id, String name, List<LevelDTO> levels) {
+        this.id = id;
+        this.name = name;
+        this.levels = levels;
+    }
 }

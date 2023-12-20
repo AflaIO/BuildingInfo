@@ -33,4 +33,13 @@ public class RoomDTO {
     public int getLight() {
         return light;
     }
+
+    public RoomDTO(int id, String name, double area, double cube, float heating, int light) {
+        this.id = id;
+        this.name = name;
+        this.area = area;
+        this.cube = cube;
+        this.heating = heating;
+        this.light = light;
+    }
 }
