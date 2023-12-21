@@ -10,7 +10,6 @@ class BuildingTest {
 
     @BeforeEach
     void setUp() {
-        // Inicjalizacja testowej instancji budynku przed każdym testem
         testBuilding = new Building(1, "Test Building");
         Level level1 = new Level(1, "Level 1");
         level1.add(new Room(1, "Room 1", 25.0, 50.0, 20.0f, 80));
@@ -50,7 +49,7 @@ class BuildingTest {
 
     @Test
     void calculateEnergyCostYearlyTest() {
-        double energyCost = 0.1; // Przykładowy koszt energii
+        double energyCost = 0.1;
         double expectedTotalEnergyConsumption = (20.0 / 50.0) + (25.0 / 60.0) + (15.0 / 40.0) + (30.0 / 70.0);
         double expectedYearlyCost = expectedTotalEnergyConsumption * energyCost * 12;
         assertEquals(expectedYearlyCost, testBuilding.calculateEnergyCostYearly(energyCost));
@@ -58,7 +57,7 @@ class BuildingTest {
 
     @Test
     void calculateRentProfitYearlyTest() {
-        double areaCost = 10.0; // Przykładowy koszt za metr kwadratowy
+        double areaCost = 10.0;
         double expectedTotalArea = (25.0 + 30.0) + (20.0 + 35.0);
         double expectedYearlyProfit = expectedTotalArea * areaCost * 12;
         assertEquals(expectedYearlyProfit, testBuilding.calculateRentProfitYearly(areaCost));
