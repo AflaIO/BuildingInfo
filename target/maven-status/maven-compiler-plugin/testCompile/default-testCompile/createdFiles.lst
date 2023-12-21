@@ -1,0 +1,5 @@
+pl\put\poznan\BuildingInfo\logic\BuildingTest.class
+pl\put\poznan\BuildingInfo\controller\MockedRoomControllerTest.class
+pl\put\poznan\BuildingInfo\logic\LevelTest.class
+pl\put\poznan\BuildingInfo\controller\MockedRoomControllerTest$TestConfig.class
+pl\put\poznan\BuildingInfo\logic\RoomTest.class

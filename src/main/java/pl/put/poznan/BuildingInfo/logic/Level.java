@@ -120,19 +120,53 @@ public class Level extends Location {
         }
         return totalEnergyConsumption;
     }
-
+    /**
+     * Calculates the annual energy cost for a level.
+     *
+     * @return The annual cost of energy for the level.
+     */
     public double calculateEnergyCostYearly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost * 12; }
-
+    /**
+     * Calculates the monthly energy cost for a level.
+     *
+     * @return The monthly cost of energy for the level.
+     */
     public double calculateEnergyCostMonthly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost; }
-
+    /**
+     * Calculates the weekly energy cost for a level.
+     *
+     * @return The weekly cost of energy for the level.
+     */
     public double calculateEnergyCostWeekly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost / 4; }
-
+    /**
+     * Calculates the daily energy cost for a level.
+     *
+     * @return The daily cost of energy for the level.
+     */
     public double calculateEnergyCostDaily(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost / 31; }
-
+    /**
+     * Calculates the annual profit from the rent for a level.
+     *
+     * @return the annual profit from the rent for a level
+     */
     public double calculateRentProfitYearly(double areaCost) { return this.calculateTotalArea() * areaCost * 12; }
-
+    /**
+     * Calculates the monthly profit from the rent for a level.
+     *
+     * @return the monthly profit from the rent for a level
+     */
     public double calculateRentProfitMonthly(double areaCost) { return this.calculateTotalArea() * areaCost; }
+    /**
+     * Calculates the weekly profit from the rent for a level.
+     *
+     * @return the weekly profit from the rent for a level
+     */
     public double calculateRentProfitWeekly(double areaCost) { return this.calculateTotalArea() * areaCost / 4; }
+    /**
+     * Calculates the daily profit from the rent for a level.
+     *
+     * @return the daily profit from the rent for a level
+     */
     public double calculateRentProfitDaily(double areaCost) { return this.calculateTotalArea() * areaCost / 31; }
 
     /**

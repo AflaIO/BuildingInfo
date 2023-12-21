@@ -1,0 +1,17 @@
+pl\put\poznan\BuildingInfo\DTO\response\AverageLightPowerResponseDTO.class
+pl\put\poznan\BuildingInfo\DTO\requestBody\BuildingDTO.class
+pl\put\poznan\BuildingInfo\DTO\response\CubeResponseDTO.class
+pl\put\poznan\BuildingInfo\logic\Building.class
+pl\put\poznan\BuildingInfo\DTO\requestBody\LevelDTO.class
+pl\put\poznan\BuildingInfo\DTO\response\AreaResponseDTO.class
+pl\put\poznan\BuildingInfo\controller\BuildingController.class
+pl\put\poznan\BuildingInfo\logic\Level.class
+pl\put\poznan\BuildingInfo\app\BuildingInfoApplication.class
+pl\put\poznan\BuildingInfo\controller\RoomController.class
+pl\put\poznan\BuildingInfo\logic\Location.class
+pl\put\poznan\BuildingInfo\DTO\response\EnergyConsumptionResponseDTO.class
+pl\put\poznan\BuildingInfo\DTO\requestBody\RoomDTO.class
+pl\put\poznan\BuildingInfo\DTO\response\RentProfitResponseDTO.class
+pl\put\poznan\BuildingInfo\logic\Room.class
+pl\put\poznan\BuildingInfo\DTO\response\EnergyCostResponseDTO.class
+pl\put\poznan\BuildingInfo\controller\LevelController.class

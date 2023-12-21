@@ -100,23 +100,63 @@ public class Room extends Location {
         return (double) this.heating / this.cube;
     }
 
+
+
+    /**
+     * Calculates the annual energy cost for a room.
+     *
+     * @return The annual cost of energy for the room.
+     */
+    public double calculateEnergyCostYearly(double energyCost) { return this.calculateEnergyConsumption() * energyCost * 12; }
+    /**
+     * Calculates the monthly energy cost for a room.
+     *
+     * @return The monthly cost of energy for the room.
+     */
+    public double calculateEnergyCostMonthly(double energyCost) { return this.calculateEnergyConsumption() * energyCost; }
+    /**
+     * Calculates the weekly energy cost for a room.
+     *
+     * @return The weekly cost of energy for the room.
+     */
+    public double calculateEnergyCostWeekly(double energyCost) { return this.calculateEnergyConsumption() * energyCost / 4; }
+    /**
+     * Calculates the daily energy cost for a room.
+     *
+     * @return The daily cost of energy for the room.
+     */
+    public double calculateEnergyCostDaily(double energyCost) { return this.calculateEnergyConsumption() * energyCost / 31; }
+
+    /**
+     * Calculates the annual profit from the rent for a room.
+     *
+     * @return the annual profit from the rent for a room
+     */
+    public double calculateRentProfitYearly(double areaCost) { return this.getArea() * areaCost * 12; }
+    /**
+     * Calculates the monthly profit from the rent for a room.
+     *
+     * @return the monthly profit from the rent for a room
+     */
+    public double calculateRentProfitMonthly(double areaCost) { return this.getArea() * areaCost; }
+    /**
+     * Calculates the weekly profit from the rent for a room.
+     *
+     * @return the weekly profit from the rent for a room
+     */
+    public double calculateRentProfitWeekly(double areaCost) { return this.getArea() * areaCost / 4; }
+    /**
+     * Calculates the daily profit from the rent for a room.
+     *
+     * @return the daily profit from the rent for a room
+     */
+    public double calculateRentProfitDaily(double areaCost) { return this.getArea() * areaCost / 31; }
+
     /**
      * Gets the area of the room.
      *
      * @return The area of the room in square meters.
      */
-    public double calculateEnergyCostYearly(double energyCost) { return this.calculateEnergyConsumption() * energyCost * 12; }
-
-    public double calculateEnergyCostMonthly(double energyCost) { return this.calculateEnergyConsumption() * energyCost; }
-
-    public double calculateEnergyCostWeekly(double energyCost) { return this.calculateEnergyConsumption() * energyCost / 4; }
-
-    public double calculateEnergyCostDaily(double energyCost) { return this.calculateEnergyConsumption() * energyCost / 31; }
-
-    public double calculateRentProfitYearly(double areaCost) { return this.getArea() * areaCost * 12; }
-    public double calculateRentProfitMonthly(double areaCost) { return this.getArea() * areaCost; }
-    public double calculateRentProfitWeekly(double areaCost) { return this.getArea() * areaCost / 4; }
-    public double calculateRentProfitDaily(double areaCost) { return this.getArea() * areaCost / 31; }
     public double getArea() {
         return area;
     }

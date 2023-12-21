@@ -119,20 +119,53 @@ public class Building extends Location {
         }
         return totalEnergyConsumption;
     }
-
+    /**
+     * Calculates the annual energy cost for a building.
+     *
+     * @return The annual cost of energy for the building.
+     */
     public double calculateEnergyCostYearly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost * 12; }
-
+    /**
+     * Calculates the monthly energy cost for a building.
+     *
+     * @return The monthly cost of energy for the building.
+     */
     public double calculateEnergyCostMonthly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost; }
-
+    /**
+     * Calculates the weekly energy cost for a building.
+     *
+     * @return The weekly cost of energy for the building.
+     */
     public double calculateEnergyCostWeekly(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost / 4; }
-
+    /**
+     * Calculates the daily energy cost for a building.
+     *
+     * @return The daily cost of energy for the building.
+     */
     public double calculateEnergyCostDaily(double energyCost) { return this.calculateTotalEnergyConsumption() * energyCost / 31; }
-
+    /**
+     * Calculates the annual profit from the rent for a building.
+     *
+     * @return the annual profit from the rent for a building
+     */
     public double calculateRentProfitYearly(double areaCost) { return this.calculateTotalArea() * areaCost * 12; }
-
+    /**
+     * Calculates the monthly profit from the rent for a building.
+     *
+     * @return the monthly profit from the rent for a building
+     */
     public double calculateRentProfitMonthly(double areaCost) { return this.calculateTotalArea() * areaCost; }
-
+    /**
+     * Calculates the weekly profit from the rent for a building.
+     *
+     * @return the weekly profit from the rent for a building
+     */
     public double calculateRentProfitWeekly(double areaCost) { return this.calculateTotalArea() * areaCost / 4; }
+    /**
+     * Calculates the daily profit from the rent for a building.
+     *
+     * @return the daily profit from the rent for a building
+     */
     public double calculateRentProfitDaily(double areaCost) { return this.calculateTotalArea() * areaCost / 31; }
 
     /**
