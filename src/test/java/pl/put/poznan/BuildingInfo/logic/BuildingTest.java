@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @see Level
  * @see Room
  */
-class BuildingTest {
+public class BuildingTest {
 
     /**
      * The instance of the {@link Building} class used for testing.
@@ -27,7 +27,7 @@ class BuildingTest {
      * Sets up the test environment by creating a test building with levels and rooms.
      */
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         testBuilding = new Building(1, "Test Building");
         Level level1 = new Level(1, "Level 1");
         level1.add(new Room(1, "Room 1", 25.0, 50.0, 20.0f, 80));
@@ -45,7 +45,7 @@ class BuildingTest {
      * Tests the calculation of the total area of the building.
      */
     @Test
-    void calculateTotalAreaTest() {
+    public void calculateTotalAreaTest() {
         double expectedTotalArea = (25.0 + 30.0) + (20.0 + 35.0);
         assertEquals(expectedTotalArea, testBuilding.calculateTotalArea());
     }
@@ -54,7 +54,7 @@ class BuildingTest {
      * Tests the calculation of the total cube of the building.
      */
     @Test
-    void calculateTotalCubeTest() {
+    public void calculateTotalCubeTest() {
         double expectedTotalCube = (50.0 + 60.0) + (40.0 + 70.0);
         assertEquals(expectedTotalCube, testBuilding.calculateTotalCube());
     }
@@ -63,7 +63,7 @@ class BuildingTest {
      * Tests the calculation of the total light power of the building.
      */
     @Test
-    void calculateLightPowerTest() {
+    public void calculateLightPowerTest() {
         double expectedTotalLightPower = (80.0 / 50.0) + (100.0 / 60.0) + (70.0 / 40.0) + (120.0 / 70.0);
         assertEquals(expectedTotalLightPower, testBuilding.calculateLightPower());
     }
@@ -72,7 +72,7 @@ class BuildingTest {
      * Tests the calculation of the total energy consumption of the building.
      */
     @Test
-    void calculateTotalEnergyConsumptionTest() {
+    public void calculateTotalEnergyConsumptionTest() {
         double expectedTotalEnergyConsumption = (20.0 / 50.0) + (25.0 / 60.0) + (15.0 / 40.0) + (30.0 / 70.0);
         assertEquals(expectedTotalEnergyConsumption, testBuilding.calculateTotalEnergyConsumption());
     }
@@ -81,7 +81,7 @@ class BuildingTest {
      * Tests the calculation of the yearly energy cost for the building.
      */
     @Test
-    void calculateEnergyCostYearlyTest() {
+    public void calculateEnergyCostYearlyTest() {
         double energyCost = 0.1;
         double expectedTotalEnergyConsumption = (20.0 / 50.0) + (25.0 / 60.0) + (15.0 / 40.0) + (30.0 / 70.0);
         double expectedYearlyCost = expectedTotalEnergyConsumption * energyCost * 12;
@@ -92,7 +92,7 @@ class BuildingTest {
      * Tests the calculation of the yearly rent profit for the building.
      */
     @Test
-    void calculateRentProfitYearlyTest() {
+    public void calculateRentProfitYearlyTest() {
         double areaCost = 10.0;
         double expectedTotalArea = (25.0 + 30.0) + (20.0 + 35.0);
         double expectedYearlyProfit = expectedTotalArea * areaCost * 12;

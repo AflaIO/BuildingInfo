@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  * @see Room
  */
-class RoomTest {
+public class RoomTest {
 
     /**
      * The instance of the {@link Room} class used for testing.
@@ -25,7 +25,7 @@ class RoomTest {
      * Sets up the test environment by creating a test room.
      */
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         testRoom = new Room(1, "Test Room", 25.0, 50.0, 20.0f, 80);
     }
 
@@ -33,7 +33,7 @@ class RoomTest {
      * Tests the calculation of light power for the room.
      */
     @Test
-    void calculateLightPowerTest() {
+    public void calculateLightPowerTest() {
         double expectedLightPower = 80.0 / 50.0;
         assertEquals(expectedLightPower, testRoom.calculateLightPower());
     }
@@ -42,7 +42,7 @@ class RoomTest {
      * Tests the calculation of energy consumption for the room.
      */
     @Test
-    void calculateEnergyConsumptionTest() {
+    public void calculateEnergyConsumptionTest() {
         double expectedEnergyConsumption = 20.0 / 50.0;
         assertEquals(expectedEnergyConsumption, testRoom.calculateEnergyConsumption());
     }
@@ -51,7 +51,7 @@ class RoomTest {
      * Tests the calculation of monthly energy cost for the room.
      */
     @Test
-    void calculateEnergyCostMonthlyTest() {
+    public void calculateEnergyCostMonthlyTest() {
         double energyCost = 0.1;
         double expectedEnergyConsumption = 20.0 / 50.0;
         double expectedMonthlyCost = expectedEnergyConsumption * energyCost;
@@ -62,7 +62,7 @@ class RoomTest {
      * Tests the calculation of weekly energy cost for the room.
      */
     @Test
-    void calculateEnergyCostWeeklyTest() {
+    public void calculateEnergyCostWeeklyTest() {
         double energyCost = 0.1;
         double expectedEnergyConsumption = 20.0 / 50.0;
         double expectedWeeklyCost = expectedEnergyConsumption * energyCost / 4;
@@ -73,7 +73,7 @@ class RoomTest {
      * Tests the calculation of daily energy cost for the room.
      */
     @Test
-    void calculateEnergyCostDailyTest() {
+    public void calculateEnergyCostDailyTest() {
         double energyCost = 0.1;
         double expectedEnergyConsumption = 20.0 / 50.0;
         double expectedDailyCost = expectedEnergyConsumption * energyCost / 31;
@@ -84,7 +84,7 @@ class RoomTest {
      * Tests the calculation of yearly rent profit for the room.
      */
     @Test
-    void calculateRentProfitYearlyTest() {
+    public void calculateRentProfitYearlyTest() {
         double areaCost = 10.0;
         double expectedYearlyProfit = 25.0 * areaCost * 12;
         assertEquals(expectedYearlyProfit, testRoom.calculateRentProfitYearly(areaCost));
@@ -94,7 +94,7 @@ class RoomTest {
      * Tests the calculation of monthly rent profit for the room.
      */
     @Test
-    void calculateRentProfitMonthlyTest() {
+    public void calculateRentProfitMonthlyTest() {
         double areaCost = 10.0;
         double expectedMonthlyProfit = 25.0 * areaCost;
         assertEquals(expectedMonthlyProfit, testRoom.calculateRentProfitMonthly(areaCost));
@@ -104,7 +104,7 @@ class RoomTest {
      * Tests the calculation of daily rent profit for the room.
      */
     @Test
-    void calculateRentProfitDailyTest() {
+    public void calculateRentProfitDailyTest() {
         double areaCost = 10.0;
         double expectedDailyProfit = 25.0 * areaCost / 31;
         assertEquals(expectedDailyProfit, testRoom.calculateRentProfitDaily(areaCost));

@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @see Level
  * @see Room
  */
-class LevelTest {
+public class LevelTest {
 
     /**
      * The instance of the {@link Level} class used for testing.
@@ -26,7 +26,7 @@ class LevelTest {
      * Sets up the test environment by creating a test level with rooms.
      */
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         testLevel = new Level(1, "Test Level");
         testLevel.add(new Room(1, "Room 1", 25.0, 50.0, 20.0f, 80));
         testLevel.add(new Room(2, "Room 2", 30.0, 60.0, 25.0f, 100));
@@ -36,7 +36,7 @@ class LevelTest {
      * Tests the calculation of the total area of the level.
      */
     @Test
-    void calculateTotalAreaTest() {
+    public void calculateTotalAreaTest() {
         double expectedTotalArea = 25.0 + 30.0;
         assertEquals(expectedTotalArea, testLevel.calculateTotalArea());
     }
@@ -45,7 +45,7 @@ class LevelTest {
      * Tests the calculation of the total cube of the level.
      */
     @Test
-    void calculateTotalCubeTest() {
+    public void calculateTotalCubeTest() {
         double expectedTotalCube = 50.0 + 60.0;
         assertEquals(expectedTotalCube, testLevel.calculateTotalCube());
     }
@@ -54,7 +54,7 @@ class LevelTest {
      * Tests the calculation of the total light power of the level.
      */
     @Test
-    void calculateLightPowerTest() {
+    public void calculateLightPowerTest() {
         double expectedTotalLightPower = (80.0 / 50.0) + (100.0 / 60.0);
         assertEquals(expectedTotalLightPower, testLevel.calculateLightPower());
     }
@@ -63,7 +63,7 @@ class LevelTest {
      * Tests the calculation of the total energy consumption of the level.
      */
     @Test
-    void calculateTotalEnergyConsumptionTest() {
+    public void calculateTotalEnergyConsumptionTest() {
         double expectedTotalEnergyConsumption = (20.0 / 50.0) + (25.0 / 60.0);
         assertEquals(expectedTotalEnergyConsumption, testLevel.calculateTotalEnergyConsumption());
     }
@@ -72,7 +72,7 @@ class LevelTest {
      * Tests the calculation of the weekly energy cost for the level.
      */
     @Test
-    void calculateEnergyCostWeeklyTest() {
+    public void calculateEnergyCostWeeklyTest() {
         double energyCost = 0.1;
         double expectedTotalEnergyConsumption = (20.0 / 50.0) + (25.0 / 60.0);
         double expectedWeeklyCost = expectedTotalEnergyConsumption * energyCost / 4;
@@ -83,7 +83,7 @@ class LevelTest {
      * Tests the calculation of the weekly rent profit for the level.
      */
     @Test
-    void calculateRentProfitWeeklyTest() {
+    public void calculateRentProfitWeeklyTest() {
         double areaCost = 10.0;
         double expectedTotalArea = 25.0 + 30.0;
         double expectedWeeklyProfit = expectedTotalArea * areaCost / 4;
