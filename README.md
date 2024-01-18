@@ -17,3 +17,7 @@
 ## Wersjonowanie
 Przy kazdym mergu do maina tworzymy nowy tag i podnosimy wersję zarówno pomie jak i w tworzonym release
 
+## Diagram UML
+![image](https://github.com/AflaIO/BuildingInfo/assets/89967155/2b95e620-96e0-4f22-a9a8-2d6a91e00a1b)
+
+
